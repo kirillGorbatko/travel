@@ -1,2 +1,22 @@
+- nav = ['Home', 'Luxury packages', 'Book with us', 'Why Lux Trips', 'Contact', 'Client Area',];
+
 mixin header
 	header.header
+		.header__in 
+			a.header_logo(href="./index.html")
+				img(class="header_logo__in", src="./images/logo.svg", alt="Logo")
+			nav.header_nav 
+				.header_nav__inner
+					.header_nav_decor
+					ul.header_nav__list
+						each item in nav
+							li.header_nav__item
+								a.header_nav__link(href="#")= item
+			a.header_button(href="#") Call Me 
+				span.header_button__word Back
+				.header_button__decor.header_button__decor--top
+					+icon('decor', 'icon--size_mod')
+				.header_button__decor.header_button__decor--bottom
+					+icon('decor', 'icon--size_mod')
+			button.header_icon.iconMenu(type="button")
+				span.header_icon__in

@@ -1,0 +1,72 @@
+-
+	head = ['World','Africa','Asia','Europe','North America','South America','Antarctica','Australia',];
+
+	list = [
+		{
+			pin: 'Austria',
+			title: 'Winter Park Ski Holiday',
+			rating: 4,
+			price: '1490',
+		},
+			{
+			pin: 'Peru',
+			title: 'Machu Picchu',
+			rating: 5,
+			price: '2300',
+			button: true,
+		},
+			{
+			pin: 'Croatia',
+			title: 'Hvar',
+			rating: 4,
+			price: '4500',
+		},
+			{
+			pin: 'Jordan',
+			title: 'Wadi Musa',
+			rating: 5,
+			price: '4500',
+		},
+	];
+section.section.top_rated
+	.section_in
+		h2.top_rated_title
+			span.top_rated_title__in Top Rated Experiences
+		.top_rated__tabs
+			nav.top_rated__head
+				each value in head
+					button.top_rated_item(type="button")= value
+						span.top_rated_item__decor
+			.top_rated__blocks 
+				.top_rated_block
+					.top_rated_block__slider.topRatedSlider
+						ul.top_rated_block__list 
+							each item, index in list
+								li.top_rated_block__item 
+									a.top_rated_block__link(href="#")
+										.top_rated_block_bg
+											+picture({
+												img: `top_rated/0${index+1}`,
+												class: 'top_rated_block_bg__wrap',
+												img_class: 'top_rated_block_bg__img',
+											})
+										article.top_rated_block__content
+											.top_rated_block__info
+												.top_rated_block_location 
+													.top_rated_block_location__icon
+														+icon('pin', 'icon--size_mod')
+													.top_rated_block_location__text= item.pin
+												h4.top_rated_block__title= item.title
+												.top_rated_block__row 
+													.top_rated_block__bottom
+														.top_rated_block__label from
+														.top_rated_block__price= item.price
+													if item.button 
+														.top_rated_block__button customise
+											.top_rated_block_rating 
+												.top_rated_block_rating__value!= `${item.rating}.0`
+												.top_rated_block_rating__stars
+													+loop_while(5 - item.rating)
+														.top_rated_block_rating__star
+													+loop_while(item.rating)
+														.top_rated_block_rating__star.top_rated_block_rating__star--active

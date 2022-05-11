@@ -1,0 +1,90 @@
+-
+	items = [
+		{
+			icon: 'romb',
+			text: 'Destination',
+			ph: 'Where are you going?',
+		},
+		{
+			icon: 'sun',
+			text: 'Travel type',
+			ph: 'Adventure Travel',
+		},
+		{
+			icon: 'calendar',
+			text: 'When',
+			ph: '14 Dec 2022',
+		},
+		{
+			icon: 'person',
+			text: 'Travellers',
+			ph: '2 Persons',
+		},
+	];
+
+section.section.home_hero
+	.home_hero__wrap
+		.home_hero_bg.home_hero_bg--sky
+			+picture({
+				img: 'hero/sky',
+				class: 'home_hero_bg__wrap',
+				img_class: 'home_hero_bg__img',
+			})
+		.home_hero_bg.home_hero_bg--lake
+			+picture({
+				img: 'hero/lake',
+				png: true,
+				class: 'home_hero_bg__wrap',
+				img_class: 'home_hero_bg__img',
+			})
+		.home_hero_bg.home_hero_bg--nature
+			+picture({
+				img: 'hero/nature',
+				png: true,
+				class: 'home_hero_bg__wrap',
+				img_class: 'home_hero_bg__img',
+			})
+		.home_hero_bg.home_hero_bg--clouds
+			+picture({
+				img: 'hero/clouds',
+				png: true,
+				class: 'home_hero_bg__wrap',
+				img_class: 'home_hero_bg__img',
+			})
+		.home_hero_bg.home_hero_bg--mountains
+			+picture({
+				img: 'hero/mountains',
+				png: true,
+				class: 'home_hero_bg__wrap',
+				img_class: 'home_hero_bg__img',
+			})
+		.home_hero_bg__romb.home_hero_bg__romb--center
+		.home_hero_bg__romb.home_hero_bg__romb--left_top
+		.home_hero_bg__romb.home_hero_bg__romb--left_bot
+		.home_hero_bg__romb.home_hero_bg__romb--right_top
+		.home_hero_bg__romb.home_hero_bg__romb--right_bot
+	.section_in
+		.home_hero__label the world’s most
+		h1.home_hero__title extra ordinary
+		.home_hero__title__subtitle places
+		.home_hero_find
+			.home_hero_find_head
+				.home_hero_find_head__in find your journey
+					.home_hero_find_head__decor
+						+icon('decor', 'icon--size_mod')
+			form.home_hero_find__form(action="#") 
+				ul.home_hero_find__items
+					each item in items
+						li.find_item
+							label.find_item__top
+								.find_item__icon
+									+icon(item.icon, 'icon--size_mod')
+								.find_item__text= item.text
+							input(class='find_item__input ' type="text" placeholder=`${item.ph}`)
+					li.find_item
+						button.find_item_button(type='submit')
+							.find_item_button__icon 
+								+icon('loupe', 'icon--size_mod')
+							| Find
+
+

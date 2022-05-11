@@ -8,34 +8,196 @@
 
 	cursor: pointer;
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 	}
-
 }
 
 //color extends
-%blue_btn_1 {
-	font-weight: 700;
-	color: $white;
-	background-color: $color_link_base;
-	transition: background-color .3s ease;
+%white_btn_1 {
+	position: relative;
 
 	@include st_btn();
 
-	&:hover {
-		background-color: darken($color_link_base, 10%);
+	font-family: $font_2;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: $black;
+
+	@extend %transition_background;
+
+	&:hover,
+	&:focus {
+		background-color: $white;
+
+		@include bp($point_2, min) {
+			&::before,
+			&::after {
+				transform: scale(0);
+			}
+		}
 	}
 
+	@include bp($point_2, min) {
+		border-left: 0.1rem solid $white;
+		border-right: 0.1rem solid $white;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			z-index: -1;
+
+			width: calc(50% - 1.7rem);
+			height: calc(100% + 0.2rem);
+
+			transition: transform 0.3s ease;
+			will-change: transform;
+		}
+
+		&::before {
+			left: 0;
+			transform: translate(-0.1rem, -0.1rem);
+
+			border-radius: 6.1rem 0 0 6.1rem;
+
+			border-top: 0.1rem solid $white;
+			border-bottom: 0.1rem solid $white;
+		}
+
+		&::after {
+			right: 0;
+			transform: translate(0.1rem, -0.1rem);
+
+			border-radius: 0 6.1rem 6.1rem 0;
+
+			border-top: 0.1rem solid $white;
+			border-bottom: 0.1rem solid $white;
+		}
+	}
+
+	@include bp($point_3) {
+		border: 0.1rem solid $white;
+	}
+}
+
+%white_btn_2 {
+	position: relative;
+
+	@include st_btn();
+
+	font-family: $font_2;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: $brown;
+
+	background-color: $white;
+
+	border-left: 0.1rem solid $white;
+	border-right: 0.1rem solid $white;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: -0.9rem;
+		z-index: -1;
+
+		width: 9.9rem;
+		height: 6.1rem;
+	}
+
+	&::before {
+		left: 2.5rem;
+
+		border-radius: 6.1rem 0 0 6.1rem;
+
+		border-top: 0.1rem solid $white;
+		border-bottom: 0.1rem solid $white;
+	}
+
+	&::after {
+		right: 2.5rem;
+
+		border-radius: 0 6.1rem 6.1rem 0;
+
+		border-top: 0.1rem solid $white;
+		border-bottom: 0.1rem solid $white;
+	}
+}
+
+%black_btn_1 {
+	position: relative;
+
+	@include st_btn();
+	font-family: $font_2;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+
+	color: $white;
+	background-color: $black;
+
+	@extend %transition_background;
+
+	&:hover,
+	&:focus {
+		background-color: $brown;
+	}
 }
 
 //size extends
 %btn_size_1 {
-	height: 4rem;
-	padding: 0 1.2rem;
-
-	line-height: 4rem;
 	font-size: 1.6rem;
 
-	border-radius: $gl_radius;
+	border-radius: 6.1rem;
+
+	@include bp($point_2, min) {
+		height: 4rem;
+
+		line-height: 4rem;
+		padding: 0 2.4rem;
+	}
+
+	@include bp($point_3) {
+		height: 3.6rem;
+
+		line-height: 3.6rem;
+		padding: 0 1.2rem;
+	}
+}
+
+%btn_size_2 {
+	height: 5.5rem;
+	line-height: 5.5rem;
+
+	border-radius: 6.7rem;
+
+	@include bp($point_2, min) {
+		padding: 0 4.5rem;
+	}
+
+	@include bp($point_3, $point_7) {
+		padding: 0 3.6rem;
+	}
+
+	@include bp($point_7, min) {
+		font-size: 2.6rem;
+	}
+
+	@include bp($point_7 - 1) {
+		padding: 0 2rem;
+		font-size: 2.1rem;
+	}
+}
+
+%btn_size_3 {
+	font-size: 2.4rem;
+
+	height: 7rem;
+	line-height: 7rem;
+	border-radius: 12.1rem;
+
+	padding: 0 2.4rem;
 }

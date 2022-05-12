@@ -1,0 +1,70 @@
+.luxury_packages {
+}
+
+.luxury_packages__body {
+}
+
+.luxury_packages_info {
+}
+
+.luxury_packages_info__title {
+	@extend %h2;
+
+	@include bp($point_2, min) {
+		max-width: 21.4rem;
+
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	@include bp($point_3) {
+		max-width: 14.3rem;
+	}
+}
+
+.luxury_packages_info__button {
+}
+
+.luxury_packages_card {
+	position: relative;
+
+	background: $gradient_3;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.luxury_packages_card_bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+	width: 100%;
+	height: 100%;
+}
+
+.luxury_packages_card_bg__wrap {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.luxury_packages_card_bg__img {
+	@extend %cover_img;
+}
+
+.luxury_packages_card__title {
+}
+
+.luxury_packages_card__romb {
+}
+
+.luxury_packages_card__value {
+}
+
+.luxury_packages_card__label {
+}
+
+.luxury_packages_card__icon {
+}

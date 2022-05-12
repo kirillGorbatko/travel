@@ -14,8 +14,26 @@ function topRatedSlider() {
 			observer: true,
 			observeParents: true,
 			speed: 800,
-			slidesPerView: 3,
+			loop: true,
 
+			navigation: {
+				nextEl: '.top_rated_block__slider .topRatedArrow',
+			},
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1.1,
+				},
+				768: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 2.5,
+				},
+				1200: {
+					slidesPerView: 3,
+				},
+			},
 		});
 	}
 }

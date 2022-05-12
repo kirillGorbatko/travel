@@ -1,0 +1,43 @@
+-
+	cards = [
+		{
+			title: 'Best Winter Destinations',
+			value: 34,
+		},
+		{
+			title: "The world's most extraordinary places",
+			value: 29,
+		},
+			{
+			title: 'New destinations for 2022',
+			value: 47,
+		},
+			{
+			title: 'Your health is matter',
+			value: 29,
+		},
+			{
+			title: 'Experiences Away From Crowd',
+			value: 168,
+		},
+	];
+
+section.section.luxury_packages
+	.section_in
+		.luxury_packages__body 
+			.luxury_packages_info
+				h2.luxury_packages_info__title LuxuryPackages
+				a.luxury_packages_info__button(href="#") view all
+			.luxury_packages_card
+				.luxury_packages_card_bg 
+					+picture({
+						img: 'luxury_packages/01',
+						class: 'luxury_packages_card_bg__wrap',
+						img_class: 'luxury_packages_card_bg__img',
+					})
+				h4.luxury_packages_card__title Best Winter Destinations
+				.luxury_packages_card__romb 
+					.luxury_packages_card__value 34
+					.luxury_packages_card__label places
+					.luxury_packages_card__icon 
+						+icon('arrow','icon--size_mod')

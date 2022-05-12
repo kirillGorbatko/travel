@@ -3,6 +3,7 @@ import { GLOBAL_VARS } from 'utils/constants';
 import { documentReady, pageLoad } from 'utils';
 import pageWidgetInit from './dev_vendors/dev_widget';
 import topRatedSlider from './components/topRatedSlider';
+import tabs from './components/tabs';
 // ------------------- imports###
 
 // ------------------  import components
@@ -22,6 +23,7 @@ const readyFunc = () => {
 	console.log('ready');
 	menuInit();
 	topRatedSlider();
+	tabs();
 };
 
 const loadFunc = () => {

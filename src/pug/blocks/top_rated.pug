@@ -32,15 +32,22 @@ section.section.top_rated
 	.section_in
 		h2.top_rated_title
 			span.top_rated_title__in Top Rated Experiences
-		.top_rated__tabs
+		.top_rated__tabs.tabsParent
 			nav.top_rated__head
-				each value in head
-					button.top_rated_item(type="button")= value
-						span.top_rated_item__decor
-			.top_rated__blocks 
-				.top_rated_block
-					.top_rated_block__slider.topRatedSlider
-						ul.top_rated_block__list 
+				each value, index in head
+					if index == 0
+						button.top_rated_item.tabsItem.activeState(type="button")= value
+							span.top_rated_item__decor
+					else 
+						button.top_rated_item.tabsItem(type="button")= value
+							span.top_rated_item__decor
+			.top_rated__blocks
+				.top_rated_block.tabsBlock.activeState
+					.top_rated_block__slider
+						.top_rated_block_arrow.topRatedArrow
+							.top_rated_block_arrow__icon 
+								+icon('arrow', 'icon--size_mod')
+						ul.top_rated_block__list.topRatedSlider 
 							each item, index in list
 								li.top_rated_block__item 
 									a.top_rated_block__link(href="#")
@@ -70,3 +77,6 @@ section.section.top_rated
 														.top_rated_block_rating__star
 													+loop_while(item.rating)
 														.top_rated_block_rating__star.top_rated_block_rating__star--active
+				+loop_while(7) 
+					.top_rated_block.tabsBlock
+						.top_rated_block__text Tab #{i+1}

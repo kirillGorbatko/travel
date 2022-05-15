@@ -1,0 +1,48 @@
+-
+	timeline = [
+		{
+			title: 'Describe your dream trip',
+			descr: 'Let us know what your perfect vacation is. Destinations, preferences, and personal interests. ',
+		},
+		{
+			title: 'Get matched',
+			descr: 'Our team will create perfect travel itinerary for you, based on your personalized needs and wishes.',
+		},
+		{
+			title: 'Book your vacation',
+			descr: 'Confirm your trip only when you are completely satisfied with the proposed travel plan. ',
+		},
+	];
+section.section.customize
+	.section_in 
+		h2.customize__title Customise <br/> your trip with us
+		.customize__container
+			ul.customize_timeline
+				each item in timeline
+					li.customize_timeline__item
+						.customize_timeline_number
+							.customize_timeline_number__in
+						.customize_timeline__wrap
+							h4.customize_timeline__title= item.title
+							.customize_timeline__descr= item.descr
+			.customize_bottom
+				a.customize_bottom__button(href="#") Start a trip request
+					.customize_bottom__decor.customize_bottom__decor--top
+						+icon('decor', 'icon--size_mod')
+					.customize_bottom__decor.customize_bottom__decor--bottom
+						+icon('decor', 'icon--size_mod')
+				.customize_bottom__descr It’s Free! - no credit card required
+		.customize_form
+			.customize_form_bg 
+				+picture({
+					img: 'form_bg',
+					class: 'customize_form__wrap',
+					img_class: 'customize_form__img',
+				})
+			.customize_form__info
+				h2.customize_form__title 
+				.customize_form__subtitle
+			.customize_form__body 
+				.customize_form__input 
+				button.customize_form__button(type="submit")
+		

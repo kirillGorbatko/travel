@@ -1,6 +1,8 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import buildSliders from './buildSliders';
+
+Swiper.use([Navigation, Pagination]);
 
 function topRatedSlider() {
 	const sliderClass = '.topRatedSlider';
@@ -10,14 +12,19 @@ function topRatedSlider() {
 
 	if (typeof (slideEl) !== 'undefined' && slideEl != null) {
 		let topRatedSliderEl = new Swiper(sliderClass, {
-			modules: [Navigation],
 			observer: true,
 			observeParents: true,
 			speed: 800,
 			loop: true,
 
 			navigation: {
-				nextEl: '.top_rated_block__slider .topRatedArrow',
+				nextEl: '.top_rated_block__slider .swiperArrow',
+			},
+
+			pagination: {
+				type: 'bullets',
+				el: '.top_rated_block .swiperPagination',
+				clickable: true,
 			},
 
 			breakpoints: {

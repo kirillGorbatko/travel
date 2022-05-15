@@ -76,10 +76,6 @@
 	z-index: 2;
 }
 
-.top_rated__tabs {
-	// margin-left: calc(50% - $page_width / 2);
-}
-
 .top_rated__head {
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -114,7 +110,8 @@
 
 	@extend %transition_color;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $black_2;
 
 		.top_rated_item__decor {
@@ -168,9 +165,6 @@
 	@include flex_block(row, nowrap, center, center, center);
 }
 
-.top_rated__blocks {
-}
-
 .top_rated_block {
 	display: none;
 
@@ -202,6 +196,12 @@
 
 .top_rated_block__slider {
 	position: relative;
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 1.8rem;
+		}
+	}
 }
 
 .top_rated_block_arrow {
@@ -209,36 +209,6 @@
 	top: 50%;
 	right: 0;
 	z-index: 2;
-
-	width: 7.5rem;
-	height: 7.5rem;
-
-	background-color: $brown;
-	cursor: pointer;
-
-	@extend %transition_background;
-	&:hover {
-		background-color: darken($brown, 10%);
-	}
-
-	@include flex_block(row, nowrap, center, center, center);
-
-	@include bp($point_2, min) {
-		transform: translate(3.8rem, -50%) rotate(45deg);
-	}
-
-	@include bp($point_3) {
-		transform: translate(2.6rem, -50%) rotate(45deg);
-	}
-}
-
-.top_rated_block_arrow__icon {
-	transform: rotate(-45deg);
-
-	width: 2.8rem;
-	height: 1.4rem;
-
-	stroke: $white;
 }
 
 .top_rated_block__list {
@@ -427,23 +397,22 @@
 }
 
 .top_rated_block__row {
-	@include bp($point_7, min) {
+	@include bp($point_6, min) {
 		@include flex_block(row, wrap, flex-start, flex-start);
 	}
-}
-
-.top_rated_block__bottom {
 }
 
 .top_rated_block__button {
 	@extend %white_btn_3;
 	@extend %btn_size_4;
 
-	@include bp($point_7, min) {
+	padding: 0 2.8rem;
+
+	@include bp($point_6, min) {
 		margin-left: 2.2rem;
 	}
 
-	@include bp($point_7 - 1) {
+	@include bp($point_6 - 1) {
 		margin-top: 1rem;
 	}
 }
@@ -484,9 +453,6 @@
 	}
 }
 
-.top_rated_block_rating {
-}
-
 .top_rated_block_rating__value {
 	text-align: center;
 	font-weight: 500;
@@ -498,9 +464,6 @@
 	&:not(:last-child) {
 		margin-bottom: 1rem;
 	}
-}
-
-.top_rated_block_rating__stars {
 }
 
 .top_rated_block_rating__star {

@@ -75,8 +75,78 @@ a {
 	}
 }
 
-.elements_list {
-	padding: 3rem;
+.swiperArrow {
+	width: 7.5rem;
+	height: 7.5rem;
+
+	background-color: $brown;
+	cursor: pointer;
+
+	@extend %transition_background;
+	&:hover,
+	&:focus {
+		background-color: darken($brown, 10%);
+	}
+
+	@include flex_block(row, nowrap, center, center, center);
+
+	@include bp($point_2, min) {
+		transform: translate(3.8rem, -50%) rotate(45deg);
+	}
+
+	@include bp($point_3) {
+		transform: translate(2rem, -50%) rotate(45deg);
+	}
 }
 
+.swiperArrow__icon {
+	transform: rotate(-45deg);
+
+	width: 2.8rem;
+	height: 1.4rem;
+
+	stroke: $white;
+}
+
+.swiperPagination {
+	@include bp($point_2, min) {
+		display: none;
+	}
+
+	@include bp($point_3) {
+		gap: 0.6rem;
+
+		@include flex_block(row, wrap, center, center, center);
+	}
+
+	.swiper-pagination-bullet {
+		position: relative;
+
+		width: 3.8rem;
+		height: 0.2rem;
+
+		background-color: $white;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: scaleX(0);
+
+			width: 100%;
+			height: 100%;
+
+			background-color: $brown;
+
+			@extend %transition_transform;
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		&::before {
+			transform: scaleX(1);
+		}
+	}
+}
 //------------------------------------------------------------base styles###

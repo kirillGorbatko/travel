@@ -1,7 +1,7 @@
 -
 	cards = [
 		{
-			title: 'Best Winter Destinations',
+			title: 'Best </br> Winter Destinations',
 			value: 34,
 		},
 		{
@@ -9,11 +9,11 @@
 			value: 29,
 		},
 			{
-			title: 'New destinations for 2022',
+			title: 'New </br> destinations for 2022',
 			value: 47,
 		},
 			{
-			title: 'Your health is matter',
+			title: 'Your health </br> is matter',
 			value: 29,
 		},
 			{
@@ -23,21 +23,36 @@
 	];
 
 section.section.luxury_packages
-	.section_in
-		.luxury_packages__body 
-			.luxury_packages_info
-				h2.luxury_packages_info__title LuxuryPackages
+	.luxury_packages_bg
+		+picture({
+			img: 'bg_sea',
+			class: 'luxury_packages_bg__wrap',
+			img_class: 'luxury_packages_bg__img',
+		})
+	.luxury_packages__head
+			h2.luxury_packages_info__title Luxury Packages
+			a.luxury_packages_info__button(href="#") view all
+	.section_in.luxury_packages_in
+		button.luxury_packages_arrow.swiperArrow(type="button")
+			.swiperArrow__icon
+				+icon('arrow', 'icon--size_mod')
+		ul.luxury_packages__body.luxuryPackagesSlider
+			li.luxury_packages_info
+				h2.luxury_packages_info__title Luxury Packages
 				a.luxury_packages_info__button(href="#") view all
-			.luxury_packages_card
-				.luxury_packages_card_bg 
-					+picture({
-						img: 'luxury_packages/01',
-						class: 'luxury_packages_card_bg__wrap',
-						img_class: 'luxury_packages_card_bg__img',
-					})
-				h4.luxury_packages_card__title Best Winter Destinations
-				.luxury_packages_card__romb 
-					.luxury_packages_card__value 34
-					.luxury_packages_card__label places
-					.luxury_packages_card__icon 
-						+icon('arrow','icon--size_mod')
+			each card, index in cards
+				li.luxury_packages_card
+					a.luxury_packages_info__link(href="#")
+						.luxury_packages_card_bg 
+							+picture({
+								img: `luxury_packages/0${index+1}`,
+								class: 'luxury_packages_card_bg__wrap',
+								img_class: 'luxury_packages_card_bg__img',
+							})
+						h4.luxury_packages_card__title!= card.title
+						.luxury_packages_card__romb
+							.luxury_packages_card__value= card.value
+							.luxury_packages_card__label places
+							.luxury_packages_card__icon 
+								+icon('arrow','icon--size_mod')
+		.luxury_packages__pagination.swiperPagination

@@ -139,16 +139,16 @@
 	border: 0.1rem solid $white;
 
 	@extend %transition_color_background;
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: $white;
 		color: $black;
 	}
 }
 
 %black_btn_1 {
-	position: relative;
-
 	@include st_btn();
+
 	font-family: $font_2;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
@@ -161,6 +161,81 @@
 	&:hover,
 	&:focus {
 		background-color: $brown;
+	}
+}
+
+%black_btn_2 {
+	@include st_btn();
+
+	font-family: $font_2;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: $black_2;
+
+	border: 0.1rem solid $black_2;
+
+	@extend %transition_color_background;
+	&:hover,
+	&:focus {
+		background-color: $black_2;
+		color: $white;
+	}
+}
+
+%black_btn_3 {
+	@include st_btn();
+
+	position: relative;
+
+	font-family: $font_2;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+
+	color: $white;
+	background-color: $black;
+
+	border-left: 0.1rem solid $black;
+	border-right: 0.1rem solid $black;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0.3rem;
+		z-index: -1;
+
+		width: calc(45% - 4.25rem);
+		height: 6.1rem;
+
+		transition: transform 0.3s ease;
+		will-change: transform;
+	}
+
+	&::before {
+		left: 5%;
+		transform: translate(-0.1rem, -0.1rem);
+
+		border-radius: 6.1rem 0 0 6.1rem;
+
+		border-top: 0.1rem solid $black;
+		border-bottom: 0.1rem solid $black;
+	}
+
+	&::after {
+		right: 5%;
+		transform: translate(0.1rem, -0.1rem);
+
+		border-radius: 0 6.1rem 6.1rem 0;
+
+		border-top: 0.1rem solid $black;
+		border-bottom: 0.1rem solid $black;
+	}
+
+	@extend %transition_color;
+
+	&:hover,
+	&:focus {
+		color: $brown;
 	}
 }
 
@@ -224,13 +299,23 @@
 	line-height: 3.8rem;
 	border-radius: 6.1rem;
 
-	@include bp($point_2, min) {
-		font-size: 1.6rem;
-		padding: 0 2.8rem;
-	}
+	font-size: 1.6rem;
+}
 
-	@include bp($point_3) {
-		font-size: 1.4rem;
-		padding: 0 1.4rem;
-	}
+%btn_size_5 {
+	height: 6.1rem;
+	line-height: 6.1rem;
+	border-radius: 6.1rem;
+
+	font-size: 2.4rem;
+}
+
+%btn_size_6 {
+	font-size: 2.4rem;
+
+	height: 5.5rem;
+
+	line-height: 5.5rem;
+	padding: 0 2.4rem;
+	border-radius: 7.4rem;
 }

@@ -1,0 +1,265 @@
+.customize {
+	background-color: $light_brown;
+}
+
+.customize__title {
+	@extend %h2;
+	text-align: center;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 10.6rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 4.5rem;
+		}
+	}
+}
+
+.customize__container {
+	margin-left: auto;
+	margin-right: auto;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 15.2rem;
+
+			max-width: 54rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 9.1rem;
+
+			max-width: 35rem;
+		}
+	}
+}
+
+.customize_timeline {
+	position: relative;
+
+	counter-reset: timeline_counter;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 10%;
+		z-index: -1;
+
+		height: 80%;
+		width: 0.1rem;
+
+		background-color: $white;
+
+		@include bp($point_2, min) {
+			left: 5.75rem;
+		}
+
+		@include bp($point_3) {
+			left: 4.1rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 11rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 6.6rem;
+		}
+	}
+}
+
+.customize_timeline__item {
+	@include flex_block(row, nowrap, center, center, center);
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 11.8rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 6.5rem;
+		}
+	}
+}
+
+.customize_timeline_number {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: rotate(45deg) skew(20deg, 20deg);
+		z-index: -1;
+
+		width: 100%;
+		height: 100%;
+
+		border: 0.1rem solid $white;
+		background-color: $light_brown;
+	}
+
+	@include flex_block(row, nowrap, center, center, center);
+
+	@include bp($point_2, min) {
+		min-width: 11.5rem;
+		min-height: 11.5rem;
+
+		margin-right: 12.5rem;
+	}
+
+	@include bp($point_3) {
+		min-width: 8.2rem;
+		min-height: 8.2rem;
+
+		margin-right: 1.3rem;
+	}
+}
+
+.customize_timeline_number__in {
+	&::before {
+		counter-increment: timeline_counter;
+		content: counter(timeline_counter);
+		display: block;
+
+		font-family: $font_2;
+
+		@include bp($point_2, min) {
+			font-size: 7.3rem;
+		}
+
+		@include bp($point_3) {
+			font-size: 5.2rem;
+		}
+	}
+}
+
+.customize_timeline__wrap {
+	@include bp($point_2, min) {
+		max-width: 32.1rem;
+	}
+
+	@include bp($point_3) {
+		max-width: 25.3rem;
+	}
+}
+
+.customize_timeline__title {
+	max-width: 25.3rem;
+
+	font-family: $font_2;
+	font-weight: 400;
+	line-height: 0.98;
+	color: $black_2;
+
+	&:not(:last-child) {
+		margin-bottom: 1.2rem;
+	}
+
+	@include bp($point_7, min) {
+		font-size: 3.6rem;
+	}
+
+	@include bp($point_7 - 1) {
+		font-size: 3.2rem;
+	}
+}
+
+.customize_timeline__descr {
+	line-height: 1.8;
+	color: $black;
+
+	@include bp($point_7, min) {
+		font-size: 1.6rem;
+	}
+
+	@include bp($point_7 - 1) {
+		font-size: 1.4rem;
+	}
+}
+
+.customize_bottom {
+}
+
+.customize_bottom__button {
+	@extend %btn_size_6;
+	@extend %black_btn_3;
+
+	width: 100%;
+
+	margin: 2.6rem 0 1.8rem;
+}
+
+.customize_bottom__decor {
+	position: absolute;
+	left: 50%;
+	z-index: -1;
+
+	color: $black;
+}
+
+.customize_bottom__decor--top {
+	top: -0.6rem;
+	transform: translate(-50%, -100%);
+
+	width: 4.8rem;
+	height: 2rem;
+}
+
+.customize_bottom__decor--bottom {
+	bottom: -0.3rem;
+	transform: translate(-50%, 100%) rotate(180deg);
+
+	width: 3.5rem;
+	height: 1.4rem;
+}
+
+.customize_bottom__descr {
+	text-align: center;
+	color: $black_2;
+	font-size: 1.6rem;
+	line-height: 1.8;
+}
+
+.customize_form {
+}
+
+.customize_form_bg {
+}
+
+.customize_form__wrap {
+}
+
+.customize_form__img {
+}
+
+.customize_form__info {
+}
+
+.customize_form__title {
+}
+
+.customize_form__subtitle {
+}
+
+.customize_form__body {
+}
+
+.customize_form__input {
+}
+
+.customize_form__button {
+}

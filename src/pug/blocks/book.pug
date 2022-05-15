@@ -1,0 +1,22 @@
+- items = ['Supercars','Hotels','Villas','Yachts','Private Helicopter','Private Jet',];
+
+section.section.book
+	.book_bg 
+		+picture({
+			img: 'bg_palms',
+			class: 'book_bg__wrap',
+			img_class: 'book_bg__img',
+		})
+	.section_in
+		h2.book__title Book With Us
+		ul.book__list 
+			each item,index in items 
+				li.book_item 
+					a.book_item__link(href="#")
+						.book_item_bg 
+							+picture({
+								img: `book/0${index+1}`,
+								class: 'book_item_bg__wrap',
+								img_class: 'book_item_bg__img',
+							})
+						h3.book_item__title= item

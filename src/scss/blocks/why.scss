@@ -1,0 +1,485 @@
+.why {
+	background-color: $light_brown;
+}
+
+.why_bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.why_bg__wrap {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.why_bg__img {
+	@extend %cover_img;
+}
+
+.why__row {
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 4.7rem;
+		}
+	}
+}
+
+@include bp($point_2, min) {
+	.why__row--size_1 {
+		margin: 0 -3.2rem;
+
+		& > * {
+			padding: 0 3.2rem;
+		}
+
+		@include flex_block(row, wrap, center, flex-start, center);
+	}
+
+	.why__row--size_2 {
+		margin: 0 -1.4rem;
+
+		& > * {
+			padding: 0 1.4rem;
+		}
+
+		@include flex_block(row, wrap, center, flex-start, center);
+	}
+}
+
+.why__row--size_3 {
+	@include bp($point_2, min) {
+		margin: 0 -5rem;
+
+		& > * {
+			padding: 0 5rem;
+		}
+
+		@include flex_block(row, wrap, center, center, center);
+	}
+
+	@include bp($point_3, $point_6) {
+		margin-left: -1.7rem;
+		margin-right: -1.7rem;
+
+		& > * {
+			padding: 0 1.7rem;
+		}
+	}
+
+	@include bp($point_3) {
+		position: relative;
+
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+
+		@include flex_block(row, nowrap, center);
+	}
+
+	@include bp($point_6 - 1, $point_7) {
+		& > :last-child {
+			margin-left: 12.6rem;
+		}
+	}
+
+	@include bp($point_7 - 1) {
+		text-align: center;
+	}
+}
+
+.why_images {
+	position: relative;
+
+	@include flex_block(row, nowrap, center, center, center);
+
+	@include bp($point_2, min) {
+		padding: 20rem 0 15rem;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 10%;
+			left: 20%;
+			transform: rotate(45deg) skew(20deg, 20deg);
+
+			width: 2.6rem;
+			height: 2.6rem;
+
+			background: rgba($white, 0.31);
+			backdrop-filter: blur(1.2rem);
+			border: 0.1rem solid $white;
+		}
+	}
+
+	@include bp($point_3) {
+		padding: 13rem 0;
+	}
+}
+
+.why_images__decor {
+	transform: rotate(45deg) skew(20deg, 20deg);
+
+	background: rgba($white, 0.31);
+	backdrop-filter: blur(1.2rem);
+	border: 0.1rem solid $white;
+
+	@include bp($point_2, min) {
+		width: 11.2rem;
+		height: 11.2rem;
+
+		margin: 6rem 0;
+	}
+
+	@include bp($point_3) {
+		width: 7.2rem;
+		height: 7.2rem;
+
+		margin: 3.2rem 0;
+	}
+}
+
+.why_images_item {
+	position: absolute;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -5%;
+		left: 50%;
+		transform: rotate(45deg) skew(20deg, 20deg) translate(-50%, 50%);
+
+		background: rgba($white, 0.31);
+		backdrop-filter: blur(1.2rem);
+		border: 0.1rem solid $white;
+	}
+}
+
+.why_images_item--mod_1 {
+	top: 30%;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: rotate(45deg) skew(20deg, 20deg) translate(-50%, 50%);
+
+		background: rgba($white, 0.31);
+		backdrop-filter: blur(1.2rem);
+		border: 0.1rem solid $white;
+	}
+
+	@include bp($point_2, min) {
+		left: 0;
+
+		width: 13.8rem;
+		height: 30.7rem;
+
+		&::before {
+			width: 4.6rem;
+			height: 4.6rem;
+		}
+
+		&::after {
+			width: 2.9rem;
+			height: 2.9rem;
+		}
+	}
+
+	@include bp($point_3) {
+		left: -0.3rem;
+
+		width: 9.1rem;
+		height: 20.5rem;
+
+		&::before {
+			width: 3.1rem;
+			height: 3.1rem;
+		}
+
+		&::after {
+			width: 1.9rem;
+			height: 1.9rem;
+		}
+	}
+
+	@include bp($point_7 - 1) {
+		transform: scale(0.8);
+	}
+}
+
+.why_images_item--mod_2 {
+	@include bp($point_2, min) {
+		top: 36%;
+		right: 18%;
+
+		width: 7.3rem;
+		height: 16.3rem;
+
+		&::before {
+			width: 2.4rem;
+			height: 2.4rem;
+		}
+	}
+
+	@include bp($point_3) {
+		display: none;
+	}
+}
+
+.why_images_item--mod_3 {
+	bottom: 0;
+	right: 0;
+
+	@include bp($point_1, min) {
+		transform: translate(20%, 35%);
+	}
+
+	@include bp($point_1 - 1, $point_2) {
+		transform: translate(0, 35%);
+	}
+
+	@include bp($point_2, min) {
+		width: 14.5rem;
+		height: 32.4rem;
+
+		&::before {
+			width: 4.9rem;
+			height: 4.9rem;
+		}
+	}
+
+	@include bp($point_3, $point_7) {
+		transform: translate(0, 4rem);
+	}
+
+	@include bp($point_3) {
+		width: 10.1rem;
+		height: 22.7rem;
+
+		&::before {
+			width: 3.4rem;
+			height: 3.4rem;
+		}
+	}
+
+	@include bp($point_7 - 1) {
+		transform: scale(0.8) translate(0.6rem, 4rem);
+	}
+}
+
+.why_images_item__wrap {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	box-shadow: rgba($black, 0.6) 0 0.8rem 2rem 0;
+	border-radius: 1.1rem;
+	overflow: hidden;
+}
+
+.why_images_item__img {
+	@extend %cover_img;
+}
+
+.why__title {
+	@extend %h2;
+
+	@include bp($point_3) {
+		margin-bottom: 2.3rem;
+
+		text-align: center;
+	}
+}
+
+.why__text {
+	font-size: 1.6rem;
+	line-height: 1.8;
+	color: $black;
+
+	@include bp($point_2, min) {
+		max-width: 25.5rem;
+	}
+
+	@include bp($point_3) {
+		max-width: 38rem;
+		margin: 0 auto;
+
+		text-align: center;
+	}
+}
+
+.why__text--desktop {
+	@include bp($point_3) {
+		display: none;
+	}
+}
+
+.why__descr {
+	max-width: 25.6rem;
+
+	font-family: $font_2;
+	font-size: 4rem;
+	color: $black_2;
+
+	@include bp($point_3) {
+		text-align: center;
+		margin: 0 auto 3.2rem;
+	}
+}
+
+.why_image {
+	position: relative;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+
+		background: rgba($white, 0.31);
+		backdrop-filter: blur(1.2rem);
+		border: 0.1rem solid $white;
+	}
+
+	&::before {
+		top: 35%;
+		right: -0.3rem;
+		transform: rotate(45deg) skew(20deg, 20deg) translate(0, -100%);
+	}
+
+	&::after {
+		bottom: 0;
+		left: 50%;
+		transform: rotate(45deg) skew(20deg, 20deg) translate(-50%, 50%);
+	}
+
+	@include bp($point_2, min) {
+		width: 24.5rem;
+		height: 54.6rem;
+
+		&::before {
+			width: 6.2rem;
+			height: 6.2rem;
+		}
+
+		&::after {
+			width: 9.8rem;
+			height: 9.8rem;
+		}
+	}
+
+	@include bp($point_3) {
+		width: 16rem;
+		height: 33.7rem;
+
+		&::before {
+			width: 3.8rem;
+			height: 3.8rem;
+		}
+
+		&::after {
+			width: 6rem;
+			height: 6rem;
+		}
+	}
+
+	@include bp($point_6 - 1) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateX(-5rem);
+	}
+
+	@include bp($point_7 - 1) {
+		display: none;
+	}
+}
+
+.why_image__wrap {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	box-shadow: rgba($black, 0.6) 0 0.8rem 3rem 0;
+
+	border-radius: 1.2rem;
+	overflow: hidden;
+}
+
+.why_image__img {
+	@extend %cover_img;
+}
+
+.why_column {
+}
+
+.why_column__text {
+	@include bp($point_2, min) {
+		display: none;
+	}
+
+	@include bp($point_3) {
+		max-width: 21.6rem;
+
+		font-size: 1.6rem;
+		color: $black;
+		line-height: 1.75;
+
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.why_column__descr {
+	font-family: $font_2;
+	color: $black_2;
+
+	@include bp($point_2, min) {
+		max-width: 35.2rem;
+		font-size: 4rem;
+
+		&:not(:last-child) {
+			margin-bottom: 5.6rem;
+		}
+	}
+
+	@include bp($point_3) {
+		max-width: 21.6rem;
+		font-size: 2.6rem;
+	}
+}
+
+.why_column__button {
+	@extend %black_btn_2;
+	@extend %btn_size_4;
+	padding: 0 3rem;
+
+	@include bp($point_3) {
+		display: none;
+	}
+}
+
+.why__footer {
+	@include bp($point_2, min) {
+		display: none;
+	}
+
+	@include bp($point_3) {
+		@include flex_block(row, nowrap, center, center, center);
+	}
+}
+
+.why__button {
+	@extend %btn_size_5;
+	@extend %black_btn_2;
+	padding: 0 2rem;
+	width: 100%;
+
+	max-width: 40rem;
+}
